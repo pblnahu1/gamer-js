@@ -236,24 +236,33 @@ header {
 }
 
 .items {
-  padding: 10% 13.7%;
-  margin: 0 auto;
-  border-radius: 10px;
   cursor: pointer;
+  padding: 6% 7%;
+  margin: 0 15px;
+  width: 60%;
+  border: 3px solid transparent;
+  border-radius: 10px;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: row;
   transition: border .3s ease-in-out;
-  border: 3px solid transparent;
+  transition: transform .3s ease-in-out;
 }
 
 .items:hover {
   border: 3px solid #fff;
+  transform: scale(1.02);
+}
+
+.items > span {
+  font-size: 2.8em;
 }
 
 #id-item-1 {
   background: linear-gradient(0deg,
       rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.3)), url(../img/cat-consolas.avif);
+      rgba(0, 0, 0, 0.3)), url(../img/cat-consolas.jpeg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -262,7 +271,7 @@ header {
 #id-item-2 {
   background: linear-gradient(0deg,
       rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.3)), url(../img/cat-accesorios.avif);
+      rgba(0, 0, 0, 0.3)), url(../img/cat-accesorios.jpeg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -271,8 +280,63 @@ header {
 #id-item-3 {
   background: linear-gradient(0deg,
       rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.3)), url(../img/cat-videojuegos.avif);
+      rgba(0, 0, 0, 0.3)), url(../img/cat-videojuegos.jpeg);
   background-repeat: no-repeat;
   background-position: right;
   background-size: cover;
+}
+
+.sct-categorias-productos {
+  padding: 45px 0;
+  background: var(--header-neon);
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #3b3b3b;
+  width: 60%;
+  margin: 0 auto 30px auto;
+  padding: 30px 0;
+}
+
+.subtitulo-categorias {
+  margin: 0;
+}
+
+.contenedor-categorias {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  /* width: 100%;
+  margin: 0 auto; */
+}
+
+.card {
+  width: 200px;
+  height: 300px;
+  background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+  border-radius: 20px;
+  transition: all .3s;
+  margin: 0 15px;
+}
+
+.card2 {
+  width: 200px;
+  height: 300px;
+  background-color: #1a1a1a;
+  transition: all .2s;
+}
+
+.card2:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 30px 1px rgba(0, 255, 117, 0.30);
 }

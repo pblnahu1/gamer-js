@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "url": "../img/consolas/consola1.jpeg",
+        "producto": "Consola Xbox Series S 512gb Digital Blanco",
+        "precio": "569.714"
+    },
+    {
+        "id": 2,
+        "url": "../img/consolas/consola2.jpeg",
+        "producto": "Sony PlayStation 3 Super Slim 500gb Black",
+        "precio": "260.000"
+    },
+    {
+        "id": 3,
+        "url": "../img/consolas/consola3.jpeg",
+        "producto": "Sony PlayStation 4 Pro 1TB Black",
+        "precio": "680.000"
+    },
+    {
+        "id": 4,
+        "url": "../img/consolas/consola4.jpeg",
+        "producto": "Sony PlayStation 4 Slim 1TB Black",
+        "precio": "530.000"
+    },
+    {
+        "id": 5,
+        "url": "../img/consolas/consola5.jpeg",
+        "producto": "Sony PlayStation 5 825gb Digital Blanco y Negro",
+        "precio": "1.082.000"
+    },
+    {
+        "id": 6,
+        "url": "../img/accesorios/accesorio1.jpeg",
+        "producto": "Teclado Mecánico Gamer RGB",
+        "precio": "67.154"
+    },
+    {
+        "id": 7,
+        "url": "../img/accesorios/accesorio2.jpeg",
+        "producto": "Silla de Escritorio de Outlet Diva",
+        "precio": "167.698"
+    },
+    {
+        "id": 8,
+        "url": "../img/accesorios/accesorio3.jpeg",
+        "producto": "Escritorio Gamer Centro Estant",
+        "precio": "107.999"
+    },
+    {
+        "id": 9,
+        "url": "../img/accesorios/accesorio4.jpeg",
+        "producto": "Micrófono USB con Luz RGB Mc380 Gaming",
+        "precio": "38.689"
+    },
+    {
+        "id": 10,
+        "url": "../img/accesorios/accesorio5.jpeg",
+        "producto": "Mouse Asus Rog Gladius Inalámbrico",
+        "precio": "616.879"
+    },
+    {
+        "id": 11,
+        "url": "../img/videojuegos/juego1.jpeg",
+        "producto": "PS4 EA Sports FC 2024",
+        "precio": "73.168"
+    },
+    {
+        "id": 12,
+        "url": "../img/videojuegos/juego2.jpeg",
+        "producto": "God of War Ragnarok PS4",
+        "precio": ""
+    },
+    {
+        "id": 13,
+        "url": "../img/videojuegos/juego3.jpeg",
+        "producto": "Marvel Spiderman 2 PS5",
+        "precio": "114.999"
+    },
+    {
+        "id": 14,
+        "url": "../img/videojuegos/juego4.jpeg",
+        "producto": "Grand Theft Auto 5 PS3",
+        "precio": "79.999"
+    },
+    {
+        "id": 15,
+        "url": "../img/videojuegos/juego5.jpeg",
+        "producto": "Red Dead Redemption 2 Standar Edition PS4",
+        "precio": "46.578"
+    }
+]
