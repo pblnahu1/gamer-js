@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gaming Shop - Inicio</title>
+  <title>Gaming World - Inicio</title>
 
   <link rel="icon" href="assets/img/logo.png">
   <link rel="stylesheet" href="assets/css/styles.css">
@@ -12,8 +12,13 @@
   <!-- Fontawesome -->
   <link href="https://cdn.jsdelivr.net/gh/eliyantosarage/font-awesome-pro@main/fontawesome-pro-6.5.1-web/css/all.min.css" rel="stylesheet">
 
+  <!-- FontsGoogle -->
   <link async href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap' rel='stylesheet'>
   <link async href='https://fonts.googleapis.com/css2?family=Titan+One&display=swap' rel='stylesheet'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Honk:MORF@14&display=swap" rel="stylesheet">
+
 
 </head>
 
@@ -26,16 +31,40 @@
           <li><a href="#" target="" class="nav-links link-inicio">Inicio</a></li>
           <li><a href="#" target="" class="nav-links link-producto">Todos los productos</a></li>
           <li><a href="#" target="" class="nav-links link-quienes-somos">Quienes Somos</a></li>
-          <li><a href="#" target="" class="nav-links link-contacto">Contacto</a></li>
-          
-          <li><button id="btn-carrito" class="btn btn-carrito"><i class="fa-solid fa-cart-shopping"></i></button></li>
-          <li><button id="btn-favorito" class="btn btn-favorito"><i class="fa-solid fa-heart"></i></button></li>
-          <li><button id="btn-perfil" class="btn btn-perfil"><i class="fa-solid fa-user"></i></button></li>
-          <li><button id="btn-pais" class="btn btn-pais"><i class="fa-solid fa-globe"></i></button></li>
+          <li><a href="#" target="" class="nav-links link-contacto">Contacto</a></li>  
         </ul>
+        <div class="contenedor-botones-header">
+          <button id="btn-carrito" class="btn btn-carrito"><i class="fa-solid fa-cart-shopping"></i> Carrito</button>
+          <button id="btn-favorito" class="btn btn-favorito"><i class="fa-solid fa-heart"></i> Tus Favoritos</button>
+          <button id="btn-perfil" class="btn btn-perfil"><i class="fa-solid fa-user"></i></button>
+          <button id="btn-pais" class="btn btn-pais"><i class="fa-solid fa-globe"></i></button>
+        </div>
       </nav>
     </div>
   </header>
+
+  <!--BOTON DE VOLVER ARRIBA-->
+  <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+  <script>
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+  <script>
+    // Mostrar el botón cuando el usuario se desplaza hacia abajo en la página
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+      } else {
+        document.getElementById("myBtn").style.display = "none";
+      }
+    }
+  </script>
+  <!--FIN BOTON-->
+
   <section id="sct-banner" class="sct-banner">
     <div id="container-banner" class="container-banner">
       <h1>Potenciá tu lado gamer</h1>
@@ -52,23 +81,35 @@
         </div>
       </div>
     </section>
-
+    
     <section class="sct-categorias-productos">
       <div class="content">
-        <h2 class="subtitulo-categorias">Consolas Más Vendidas</h2>
-        <a href="#" target="_blank">Ver todo</a>
-        <a href="#">Filtrar</a>
+        <div class="container-pattern">
+          <div class="title-content">
+            <h2 class="subtitulo-categorias border-1">Consolas Más Vendidas</h2>
+          </div>
+          <div class="links-content">
+            <a href="#" class="link-ver-todo">Ver todo</a>
+            <a href="#" class="link-filtrado">Filtrar</a>
+          </div>
+        </div>
       </div>
       <div class="contenedor-categorias" id="productos-consolas">
         <!-- div's necesarios para cada categoria con la descripcion de sus productos -->
       </div>
     </section>
-
+    
     <section class="sct-categorias-productos">
       <div class="content">
-        <h2 class="subtitulo-categorias">Accesorios Gamer Más Vendidos</h2>
-        <a href="#" target="_blank">Ver todo</a>
-        <a href="#">Filtrar</a>
+        <div class="container-pattern">
+          <div class="title-content">
+            <h2 class="subtitulo-categorias border-2">Accesorios Gamer Más Vendidos</h2>
+          </div>
+          <div class="links-content">
+            <a href="#" class="link-ver-todo">Ver todo</a>
+            <a href="#" class="link-filtrado">Filtrar</a>
+          </div>
+        </div>
       </div>
       <div class="contenedor-categorias" id="productos-accesorios">
         <!-- div's necesarios para cada categoria con la descripcion de sus productos -->
@@ -77,9 +118,15 @@
 
     <section class="sct-categorias-productos">
       <div class="content">
-        <h2 class="subtitulo-categorias">Videojuegos Más Vendidos</h2>
-        <a href="#" target="_blank">Ver todo</a>
-        <a href="#">Filtrar</a>
+        <div class="container-pattern">
+          <div class="title-content">
+            <h2 class="subtitulo-categorias border-3">Videojuegos Más Vendidos</h2>
+          </div>
+          <div class="links-content">
+            <a href="#" class="link-ver-todo">Ver todo</a>
+            <a href="#" class="link-filtrado">Filtrar</a>
+          </div>
+        </div>
       </div>
       <div class="contenedor-categorias" id="productos-videojuegos">
         <!-- div's necesarios para cada categoria con la descripcion de sus productos -->
@@ -93,6 +140,7 @@
   </footer>
 
   <script src="assets/js/app.js"></script>
+  <script src="assets/js/carrito.js"></scripts>
 </body>
 
 </html>

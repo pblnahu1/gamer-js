@@ -1,92 +1,107 @@
 [
     {
         "id": 1,
-        "url": "../img/consolas/consola1.jpeg",
+        "url": "assets/img/consolas/consola1.png",
         "producto": "Consola Xbox Series S 512gb Digital Blanco",
-        "precio": "569.714"
+        "precio": "569.714",
+        "cantidad": 4
     },
     {
         "id": 2,
-        "url": "../img/consolas/consola2.jpeg",
+        "url": "assets/img/consolas/consola2.png",
         "producto": "Sony PlayStation 3 Super Slim 500gb Black",
-        "precio": "260.000"
+        "precio": "260.000",
+        "cantidad": 3
     },
     {
         "id": 3,
-        "url": "../img/consolas/consola3.jpeg",
+        "url": "assets/img/consolas/consola3.png",
         "producto": "Sony PlayStation 4 Pro 1TB Black",
-        "precio": "680.000"
+        "precio": "680.000",
+        "cantidad": 5
     },
     {
         "id": 4,
-        "url": "../img/consolas/consola4.jpeg",
+        "url": "assets/img/consolas/consola4.png",
         "producto": "Sony PlayStation 4 Slim 1TB Black",
-        "precio": "530.000"
+        "precio": "530.000",
+        "cantidad": 2
     },
     {
         "id": 5,
-        "url": "../img/consolas/consola5.jpeg",
+        "url": "assets/img/consolas/consola5.png",
         "producto": "Sony PlayStation 5 825gb Digital Blanco y Negro",
-        "precio": "1.082.000"
+        "precio": "1.082.000",
+        "cantidad": 6
     },
     {
         "id": 6,
-        "url": "../img/accesorios/accesorio1.jpeg",
+        "url": "assets/img/accesorios/accesorio1.png",
         "producto": "Teclado Mecánico Gamer RGB",
-        "precio": "67.154"
+        "precio": "67.154",
+        "cantidad": 8
     },
     {
         "id": 7,
-        "url": "../img/accesorios/accesorio2.jpeg",
+        "url": "assets/img/accesorios/accesorio2.png",
         "producto": "Silla de Escritorio de Outlet Diva",
-        "precio": "167.698"
+        "precio": "167.698",
+        "cantidad": 4
     },
     {
         "id": 8,
-        "url": "../img/accesorios/accesorio3.jpeg",
+        "url": "assets/img/accesorios/accesorio3.png",
         "producto": "Escritorio Gamer Centro Estant",
-        "precio": "107.999"
+        "precio": "107.999",
+        "cantidad": 2
     },
     {
         "id": 9,
-        "url": "../img/accesorios/accesorio4.jpeg",
+        "url": "assets/img/accesorios/accesorio4.png",
         "producto": "Micrófono USB con Luz RGB Mc380 Gaming",
-        "precio": "38.689"
+        "precio": "38.689",
+        "cantidad": 9
     },
     {
         "id": 10,
-        "url": "../img/accesorios/accesorio5.jpeg",
+        "url": "assets/img/accesorios/accesorio5.png",
         "producto": "Mouse Asus Rog Gladius Inalámbrico",
-        "precio": "616.879"
+        "precio": "616.879",
+        "cantidad": 6
     },
     {
         "id": 11,
-        "url": "../img/videojuegos/juego1.jpeg",
+        "url": "assets/img/videojuegos/juego1.png",
         "producto": "PS4 EA Sports FC 2024",
-        "precio": "73.168"
+        "precio": "73.168",
+        "cantidad": 2
     },
     {
         "id": 12,
-        "url": "../img/videojuegos/juego2.jpeg",
+        "url": "assets/img/videojuegos/juego2.png",
         "producto": "God of War Ragnarok PS4",
-        "precio": ""
+        "precio": "34.000",
+        "cantidad": 10
     },
     {
         "id": 13,
-        "url": "../img/videojuegos/juego3.jpeg",
+        "url": "assets/img/videojuegos/juego3.png",
         "producto": "Marvel Spiderman 2 PS5",
-        "precio": "114.999"
+        "precio": "114.999",
+        "cantidad": 5
     },
     {
         "id": 14,
-        "url": "../img/videojuegos/juego4.jpeg",
+        "url": "assets/img/videojuegos/juego4.png",
         "producto": "Grand Theft Auto 5 PS3",
-        "precio": "79.999"
+        "precio": "79.999",
+        "cantidad": 4
     },
     {
         "id": 15,
-        "url": "../img/videojuegos/juego5.jpeg",
+        "url": "assets/img/videojuegos/juego5.png",
         "producto": "Red Dead Redemption 2 Standar Edition PS4",
-        "precio": "46.578"
+        "precio": "46.578",
+        "cantidad": 1
     }
 ]
