@@ -33,10 +33,34 @@
           <li><a href="#" target="" class="nav-links link-quienes-somos">Quienes Somos</a></li>
           <li><a href="#" target="" class="nav-links link-contacto">Contacto</a></li>  
         </ul>
+
         <div class="contenedor-botones-header">
-          <button id="btn-carrito" class="btn btn-carrito"><i class="fa-solid fa-cart-shopping"></i> Carrito</button>
+          <button id="btn-carrito" class="btn btn-carrito" title="Tu Carrito">
+            <i class="fa-solid fa-cart-shopping">
+              <div id="numero-prod-carrito">0</div>
+            </i>
+          </button>
+          <div id="mi-carrito">
+            <div class="informacion-compra" id="informacion-compra">
+              <h4 class="title-carrito">Tus Productos</h4>
+              <button class="btn-cerrar-carrito" id="btn-cerrar-carrito" title="Cerrar Carrito">X</button>
+            </div>
+            <div class="contenedor-carrito" id="contenedor-carrito">
+              <!-- Productos Agregados -->
+              <span class="msg-carrito">No tienes nada agregado al carrito. ¡Agregá ahora!</span>
+            </div>
+            <div class="contenedor-total-btn" id="contenedor-total-btn">
+              <div class="total" id="total">Total: $0</div>
+              <button class="btn-finalizar-compra" id="btn-finalizar-compra">
+                <span class="text-finalizar-compra">Finalizar Compra</span>
+              </button>
+            </div>
+          </div>
+          
           <button id="btn-favorito" class="btn btn-favorito"><i class="fa-solid fa-heart"></i> Tus Favoritos</button>
+          
           <button id="btn-perfil" class="btn btn-perfil"><i class="fa-solid fa-user"></i></button>
+          
           <button id="btn-pais" class="btn btn-pais"><i class="fa-solid fa-globe"></i></button>
         </div>
       </nav>
@@ -140,7 +164,7 @@
   </footer>
 
   <script src="assets/js/app.js"></script>
-  <script src="assets/js/carrito.js"></scripts>
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>
