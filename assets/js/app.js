@@ -1,8 +1,8 @@
-let contenedor_categorias = document.getElementById("main-categorias");
-let seccion_categorias_productos = document.querySelectorAll(".sct-categorias-productos");
-let seccion_productos = document.querySelectorAll(".contenedor-categorias");
+let contenedor_categorias = document.getElementById("main-categorias")
+let seccion_categorias_productos = document.querySelectorAll(".sct-categorias-productos")
+let seccion_productos = document.querySelectorAll(".contenedor-categorias")
 
-let txt_array = ["Consolas", "Accesorios", "Videojuegos"];
+let txt_array = ["Consolas", "Accesorios", "Videojuegos"]
 
 fetch('assets/js/productos.json')
   .then(response => response.json())
@@ -93,23 +93,32 @@ fetch('assets/js/productos.json')
         newContentButtons.appendChild(btnFavorito);
         newContentButtons.appendChild(btnCantidad);
       }
+    })
+  })
+
+
+const seccion_principal_categorias = () => {
+  for (let i = 1; i <= 3; i++) {
+    let nuevoContenedor = document.createElement("div");
+    nuevoContenedor.classList.add("items");
+    nuevoContenedor.id = `id-item-${i}`;
+    nuevoContenedor.innerHTML = `<span>${txt_array[i - 1]}</span>`;
+
+    seccion_categorias_productos[i - 1].id = `seccion-productos-categorias-${i}`;
+
+    nuevoContenedor.addEventListener("click", () => {
+      // obtengo la seccion con su id
+      let seccion = document.getElementById(`seccion-productos-categorias-${i}`);
+      seccion.scrollIntoView({ behavior: "smooth" });
     });
-  });
 
-for (let i = 1; i <= 3; i++) {
-  let nuevoContenedor = document.createElement("div");
-  nuevoContenedor.classList.add("items");
-  nuevoContenedor.id = `id-item-${i}`;
-  nuevoContenedor.innerHTML = `<span>${txt_array[i - 1]}</span>`;
-
-  seccion_categorias_productos[i - 1].id = `seccion-productos-categorias-${i}`;
-
-  nuevoContenedor.addEventListener("click", () => {
-    // obtengo la seccion con su id
-    let seccion = document.getElementById(`seccion-productos-categorias-${i}`);
-    seccion.scrollIntoView({ behavior: "smooth" });
-  });
-
-  contenedor_categorias.appendChild(nuevoContenedor);
+    contenedor_categorias.appendChild(nuevoContenedor);
+  }
 }
+
+const render = () => {
+  seccion_principal_categorias()
+}
+
+render()
 

@@ -35,33 +35,69 @@
         </ul>
 
         <div class="contenedor-botones-header">
+          <!-- Carrito -->
           <button id="btn-carrito" class="btn btn-carrito" title="Tu Carrito">
             <i class="fa-solid fa-cart-shopping">
               <div id="numero-prod-carrito">0</div>
             </i>
           </button>
           <div id="mi-carrito">
-            <div class="informacion-compra" id="informacion-compra">
-              <h4 class="title-carrito">Tus Productos</h4>
-              <button class="btn-cerrar-carrito" id="btn-cerrar-carrito" title="Cerrar Carrito">X</button>
+            <div class="informacion-contenido informacion-compra" id="informacion-compra">
+              <h4 class="title-contenedor-nav title-carrito">Tus Productos</h4>
+              <button class="btn-cerrar-nav btn-cerrar-carrito" id="btn-cerrar-nav" title="Cerrar Carrito">X</button>
             </div>
-            <div class="contenedor-carrito" id="contenedor-carrito">
+            <div class="contenido-principal contenedor-carrito" id="contenedor-carrito">
               <!-- Productos Agregados -->
               <span class="msg-carrito">No tienes nada agregado al carrito. ¡Agregá ahora!</span>
             </div>
             <div class="contenedor-total-btn" id="contenedor-total-btn">
               <div class="total" id="total">Total: $0</div>
-              <button class="btn-finalizar-compra" id="btn-finalizar-compra">
-                <span class="text-finalizar-compra">Finalizar Compra</span>
-              </button>
+              <button class="btn-finalizar-compra" id="btn-finalizar-compra">Finalizar Compra</button>
             </div>
           </div>
           
-          <button id="btn-favorito" class="btn btn-favorito"><i class="fa-solid fa-heart"></i> Tus Favoritos</button>
+          <!-- Favoritos -->
+          <button id="btn-favorito" class="btn btn-favorito" title="Tus Productos Favoritos"><i class="fa-solid fa-heart"></i> Tus Favoritos</button>
+          <div id="mis-favoritos">
+            <div class="informacion-contenido informacion-fav">
+              <h2 class="title-contenedor-nav title-fav">Tus Favoritos</h2>
+              <button class="btn-cerrar-nav btn-cerrar-favorito" id="btn-cerrar-nav" title="Cerrar Carrito">X</button>
+            </div>
+            <div class="contenido-principal contenedor-fav">
+              <!-- Productos favoritos -->
+              <span class="msg-favoritos">No tenés ningún producto que te guste. ¡Agregalos acá!</span>
+            </div>
+          </div>
           
+          <!-- Perfil -->
           <button id="btn-perfil" class="btn btn-perfil"><i class="fa-solid fa-user"></i></button>
+          <div id="mi-perfil">
+            <div class="informacion-contenido informacion-perfil">
+              <p class="title-contenedor-nav title-account">Ingresá a tu cuenta</p>
+              <button class="btn-cerrar-nav btn-cerrar-perfil" id="btn-cerrar-nav" title="Cerrar Carrito">X</button>
+            </div>
+            <div class="contenido-principal contenedor-perfil">
+              <form>
+                <label for="lbl-email">Email:</label>
+                <input type="email" name="email-user" placeholder="example@gmail.com" class="input-email-user" id="lbl-email" required>
+                <label for="lbl-password">Password (8 characters)</label>
+                <input type="password" name="password-user" placeholder="1234" class="input-password-user" id="lbl-password" maxlength="8" required>
+              </form>
+            </div>
+            <div class="enlaces-perfil">
+              <p>¿No tenés una cuenta? <a href="#">Creá una</a></p>
+              <p>¿Olvidaste tu contraseña? <a href="#">Recuperala</a></p>
+            </div>
+          </div>
           
-          <button id="btn-pais" class="btn btn-pais"><i class="fa-solid fa-globe"></i></button>
+          <!-- Pais -->
+          <button id="btn-pais" class="btn btn-pais">
+            <i class="fa-solid fa-globe"></i>
+            <!-- <select id="list-country">
+              //Paises Opción
+              <option value="Seleccionar país">Seleccionar país</option>
+            </select> -->
+          </button>
         </div>
       </nav>
     </div>
