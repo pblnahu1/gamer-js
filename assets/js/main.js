@@ -1,9 +1,15 @@
 let btnCarrito = document.getElementById("btn-carrito");
-let btnFavorito = document.getElementById("btn-favorito");
 let miContenedorCarrito = document.getElementById("mi-carrito");
+let btnFavorito = document.getElementById("btn-favorito");
 let miContenedorFavorito = document.getElementById("mis-favoritos");
 let btnPerfil = document.getElementById("btn-perfil");
 let miContenedorPerfil = document.getElementById("mi-perfil");
+
+fetch('assets/js/productos.json')
+  .then(response => response.json())
+  .then(data => {
+
+});
 
 const mostrarVentanasNav = () => {
   // También puedo usar la clase `toggle` y `remove`
@@ -16,6 +22,7 @@ const mostrarVentanasNav = () => {
       miContenedorCarrito.style.display = "none";
     }
   });
+  console.log(btnCarrito);
 
   btnFavorito.addEventListener("click", () => {
     if (miContenedorFavorito.style.display == "none") {
@@ -27,6 +34,7 @@ const mostrarVentanasNav = () => {
       miContenedorFavorito.style.display = "none";
     }
   });
+  console.log(btnFavorito);
 
   btnPerfil.addEventListener("click", () => {
     if (miContenedorPerfil.style.display == "none") {
@@ -37,39 +45,46 @@ const mostrarVentanasNav = () => {
       miContenedorPerfil.style.display = "none";
     }
   });
+  console.log(btnPerfil);
 }
 
+// Solucionar este error de bloqueo por CORS
 const seleccion_paises_nav = () => {
   // Lógica, puede ser usando una api para crear <option> de paises del mundo
+  // http://country.io/names.json
+  
+  let selector = document.getElementById("list-country");
+  
+  const apiUrl = 'http://localhost:3000/api/countries';
+
+  // Hacer una solicitud a la API: {mode:'cors'} especifica el modo de la solicitud
+  fetch(apiUrl, {mode:'cors'})
+    .then(response => response.json())
+    .then(data => {
+      // Iterar sobre los datos de la API y agregar a los option
+      for (const countryCode in data) {
+        if (data.hasOwnProperty(countryCode)) {
+          const countryName = data[countryCode];
+          let newElementOption = document.createElement("option");
+          newElementOption.value = countryCode;
+          newElementOption.textContent = countryName;
+          selector.appendChild(newElementOption);
+        }
+      }
+    })
+    .catch (error => console.error('Error al leer la API', error));
 }
+
+// const agregar_productos_carrito = () => {
+  
+// }
 
 const render = () => {
-  mostrarVentanasNav()
-  seleccion_paises_nav()
+  mostrarVentanasNav();
+  seleccion_paises_nav();
 }
 
-render()
-
-
-// fetch('assets/js/productos.json')
-//   .then(response => response.json())
-//   .then(data => {
-//     carrito.forEach(e => {
-//       let newContent = document.createElement("div");
-//       newContent.classList.add("contenedor-carrito", "content-products-header");
-//       newContent.id = "contenedor-carrito";
-//       newContent.style.display = "block";
-
-//       newContent.style.top = header.offsetHeight + "px";
-//       newContent.style.display = "none";
-
-//       list.appendChild(newContent);
-
-//       newContent.style.display = "block";
-
-//       console.log(newContent);
-//     })
-//   });
+render();
 
 
 

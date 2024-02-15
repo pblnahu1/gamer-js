@@ -1,8 +1,8 @@
-let contenedor_categorias = document.getElementById("main-categorias")
-let seccion_categorias_productos = document.querySelectorAll(".sct-categorias-productos")
-let seccion_productos = document.querySelectorAll(".contenedor-categorias")
+let contenedor_categorias = document.getElementById("main-categorias");
+let seccion_categorias_productos = document.querySelectorAll(".sct-categorias-productos");
+let seccion_productos = document.querySelectorAll(".contenedor-categorias");
 
-let txt_array = ["Consolas", "Accesorios", "Videojuegos"]
+let txt_array = ["Consolas", "Accesorios", "Videojuegos"];
 
 fetch('assets/js/productos.json')
   .then(response => response.json())
@@ -22,7 +22,7 @@ fetch('assets/js/productos.json')
       for (let i = 0; i < productos_categoria.length && i < 5; i++) {
         // console.log(i);
       
-        let producto = productos_categoria[i]; 
+        let producto = productos_categoria[i];
 
         let cards = document.createElement("div");
         cards.classList.add("card");
@@ -93,8 +93,8 @@ fetch('assets/js/productos.json')
         newContentButtons.appendChild(btnFavorito);
         newContentButtons.appendChild(btnCantidad);
       }
-    })
-  })
+    });
+  });
 
 
 const seccion_principal_categorias = () => {
@@ -116,9 +116,11 @@ const seccion_principal_categorias = () => {
   }
 }
 
-const render = () => {
-  seccion_principal_categorias()
-}
+seccion_principal_categorias();
 
-render()
+// const render = () => {
+  
+// }
+
+// render();
 

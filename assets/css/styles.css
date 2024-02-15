@@ -147,13 +147,11 @@ header {
 .btn-perfil > i {color: blue;}
 .btn-perfil:hover {box-shadow: 0px 0px 30px var(--btn-usuario);}
 
-.btn-pais {background: var(--btn-pais); display: flex; align-items: center;}
+.btn-pais {background: var(--btn-pais); /*display: flex; align-items: center;*/}
 .btn-pais > i {color: #000;}
 .btn-pais:hover {box-shadow: 0px 0px 30px var(--btn-pais);}
 
-#mi-carrito, 
-#mis-favoritos, 
-#mi-perfil {
+.container-btns {
   display: none;
   background-color: #000;
   padding: 10px;
@@ -186,9 +184,7 @@ header {
 }
 
 /* Tooltip */
-#mi-carrito::before,
-#mis-favoritos::before,
-#mi-perfil::before {
+.container-btns::before {
   content: '';
   position: absolute;
   border-style: solid;
