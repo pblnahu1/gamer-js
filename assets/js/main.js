@@ -48,14 +48,10 @@ const mostrarVentanasNav = () => {
   console.log(btnPerfil);
 }
 
-// Solucionar este error de bloqueo por CORS
+// Solucionar este error de bloqueo por CORS: SOLUCIONADO ⭐
 const seleccion_paises_nav = () => {
-  // Lógica, puede ser usando una api para crear <option> de paises del mundo
-  // http://country.io/names.json
-  
   let selector = document.getElementById("list-country");
-  
-  const apiUrl = 'http://localhost:3000/api/countries';
+  const apiUrl = 'http://localhost:3000/names.json'; // // http://country.io/names.json
 
   // Hacer una solicitud a la API: {mode:'cors'} especifica el modo de la solicitud
   fetch(apiUrl, {mode:'cors'})
@@ -75,9 +71,7 @@ const seleccion_paises_nav = () => {
     .catch (error => console.error('Error al leer la API', error));
 }
 
-// const agregar_productos_carrito = () => {
-  
-// }
+// const agregar_productos_carrito = () => { /* code */ }
 
 const render = () => {
   mostrarVentanasNav();
