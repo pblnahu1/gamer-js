@@ -70,21 +70,23 @@ fetch('assets/js/productos.json')
 
         let btnCarrito = document.createElement("button");
         btnCarrito.classList.add("btn-agregar-carrito", "botones-productos");
-        btnCarrito.id = "boton-carrito";
+        btnCarrito.id = `boton-${categoria_actual}-carrito-${i}`;
         btnCarrito.innerHTML = `
           <i class="fa-solid fa-cart-shopping"></i>
           <span>Agregar al carrito</span>
         `;
+
         let btnFavorito = document.createElement("button");
         btnFavorito.classList.add("btn-agregar-favorito", "botones-productos");
-        btnFavorito.id = "boton-favorito";
+        btnFavorito.id = `boton-${categoria_actual}-favorito-${i}`;
         btnFavorito.innerHTML = `
           <i class="fa-solid fa-heart"></i>
           <span>Agregar a Favoritos</span>
         `;
+
         let btnCantidad = document.createElement("button");
         btnCantidad.classList.add("btn-cantidades", "botones-productos");
-        btnCantidad.id = "boton-cantidad";
+        btnCantidad.id = `boton-${categoria_actual}-cantidad-${i}`;
         btnCantidad.innerHTML = `
           <span>Cantidad: 0</span>
         `;

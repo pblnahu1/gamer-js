@@ -14,7 +14,7 @@ const app = express();
 const PORT = 3000;
 
 // Habilito CORS
-app.use(cors()); 
+app.use(cors());
 
 // Agrego Middleware de Proxy para redirigir las solicitudes de API remota
 app.use('/names.json', createProxyMiddleware({ target: 'http://country.io', changeOrigin: true }));
@@ -29,12 +29,12 @@ app.use('/names.json', createProxyMiddleware({ target: 'http://country.io', chan
 
 // Para evitar la redundancia -> si quiero editar las cabeceras, solo paso un objeto a configuración a `cors()`
 app.use(cors({
-    origin: "*",
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"]
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"]
 }));
 
 // Inicio el Servidor
 app.listen(PORT, () => {
-    console.log(`Servidor Express en ejecución en http://localhost:${PORT}`);
+  console.log(`Servidor Express en ejecución en http://localhost:${PORT}`);
 });
 
