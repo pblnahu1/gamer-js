@@ -47,6 +47,7 @@ const products_json_carrito = () => {
     .then(response => response.json())
     .then(data => {
       agregar_productos_carrito(data);
+      console.log(data);
     });
 }
 
@@ -102,6 +103,7 @@ const agregar_productos_carrito = (datos) => {
 }
 
 // Solucionar este error de bloqueo por CORS: SOLUCIONADO ⭐
+// Esta funcion se relaciona gracias al localhost, lógica implementada en `server.js`
 const seleccion_paises_nav = () => {
   let selector = document.getElementById("list-country");
   const apiUrl = 'http://localhost:3000/names.json'; // http://country.io/names.json
@@ -112,8 +114,8 @@ const seleccion_paises_nav = () => {
     .then(data => {
       // Iterar sobre los datos de la API y agregar a los option
       for (const countryCode in data) {
-        if (data.hasOwnProperty(countryCode)) {
-          const countryName = data[countryCode];
+        if (data.hasOwnProperty(countryCode)) { // si `data` tiene la propiedad especificada según `countryCode`
+          const countryName = data[countryCode]; // accedo a la propiedad existente del objeto.
           let newElementOption = document.createElement("option");
           newElementOption.value = countryCode;
           newElementOption.textContent = countryName;
@@ -124,6 +126,7 @@ const seleccion_paises_nav = () => {
     .catch (error => console.error('Error al leer la API', error));
 }
 
+// Para ejecutar las funciones una vez inicializada la app
 const render = () => {
   mostrarVentanasNav();
   seleccion_paises_nav();
