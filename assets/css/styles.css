@@ -489,7 +489,6 @@ header {
   width: 270px;
   height: 25%;
   background-color: #111010;
-  border-radius: 20px;
   transition: all .2s;
   display: flex;
   flex-direction: column;
@@ -499,6 +498,7 @@ header {
 
 .card2:hover {
   transform: scale(0.98);
+  border-radius: 20px;
 }
 
 .card:hover .content-image {

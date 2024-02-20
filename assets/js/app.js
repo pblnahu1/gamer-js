@@ -36,7 +36,7 @@ fetch('assets/js/productos.json')
         newContentImage.classList.add("content-image");
         newContentImage.id = `image-${categoria_actual}-${i}`;
         cards2.appendChild(newContentImage);
-        console.log(newContentImage);
+        // console.log(newContentImage);
 
         let image = document.createElement("img");
         image.src = producto.url;
@@ -47,7 +47,7 @@ fetch('assets/js/productos.json')
         newContentName.classList.add("content-name");
         newContentName.id = `name-${categoria_actual}-${i}`;
         cards2.appendChild(newContentName);
-        console.log(newContentName);
+        // console.log(newContentName);
 
         let productName = document.createElement("p");
         productName.textContent = producto.producto;
@@ -57,7 +57,7 @@ fetch('assets/js/productos.json')
         newContentPrice.classList.add("content-price");
         newContentPrice.id = `price-${categoria_actual}-${i}`;
         cards2.appendChild(newContentPrice);
-        console.log(newContentPrice);
+        // console.log(newContentPrice);
 
         let price = document.createElement("p");
         price.textContent = `$${producto.precio}`;
@@ -88,7 +88,7 @@ fetch('assets/js/productos.json')
         btnCantidad.classList.add("btn-cantidades", "botones-productos");
         btnCantidad.id = `boton-${categoria_actual}-cantidad-${i}`;
         btnCantidad.innerHTML = `
-          <span>Cantidad: 0</span>
+          Cantidad: ${producto.cantidad}
         `;
 
         newContentButtons.appendChild(btnCarrito);
@@ -119,10 +119,3 @@ const seccion_principal_categorias = () => {
 }
 
 seccion_principal_categorias();
-
-// const render = () => {
-  
-// }
-
-// render();
-
