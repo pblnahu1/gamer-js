@@ -1,3 +1,3 @@
 <div>
-    <img src="assets/img/muestrapage.png" style="width:230px; height: 130px">
+    <img src="assets/img/muestrapage.png" style="width:350px; height: 200px">
 </div>
