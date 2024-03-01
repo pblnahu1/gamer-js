@@ -51,8 +51,11 @@ const mostrarVentanasNav = () => {
 }
 
 
-// Solucionar este error de bloqueo por CORS: SOLUCIONADO ⭐
-// Esta funcion se relaciona gracias al localhost, lógica implementada en `server.js`
+// Implementando función para seleccionar países con Promesas y la Fetch API
+// Hace una solicitud a la API remota, maneja las promesas, ordena alfabéticamente los datos
+// y actualiza un selector en la UI con las opciones correspondientes.
+// 🤯 Solucionar este error de bloqueo por CORS: SOLUCIONADO ⭐
+// Esta funcion se relaciona gracias al localhost, lógica implementada en `js/server.js`
 const seleccion_paises_nav = () => {
 
   const selector = document.getElementById("list-country");
@@ -61,6 +64,7 @@ const seleccion_paises_nav = () => {
   // Hacer una solicitud a la API: {mode:'cors'} especifica el modo de la solicitud
   fetch(apiUrl, { mode: 'cors' })
     // .then(response => (response.ok ? response.json() : Promise.reject(`HTTP error! Status: ${response.status}`)))
+    // Verifico si la respuesta es exitosa, sino lanza un error
     .then(response => {
       if (!response) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -70,7 +74,8 @@ const seleccion_paises_nav = () => {
     .then(data => {
       console.log('Datos de la API Country para Carrito: ', data);
 
-      const countryCodes = Object.keys(data).sort(); // ordeno alfabéticamente
+      const countryCodes = Object.keys(data).sort(); // Agarro las claves de los datos y ordeno alfabéticamente
+
       // Iterar sobre los datos de la API y agregar a los option
       if (countryCodes) {
         countryCodes.forEach(countryCode => { // for (const countryCode in data)
@@ -91,7 +96,6 @@ const seleccion_paises_nav = () => {
     })
     .catch(error => console.error('Error al realizar la solicitud a la API...', error));
 }
-
 
 
 const render = () => {
