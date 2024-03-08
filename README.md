@@ -1,5 +1,5 @@
 <h1 align="center">E-Commerce Gamer</h1>
-<h2 align="center">E-Commerce Game hecho con JavaScript, HTML y CSS. #EnProceso</h2>
+<h2 align="center">E-Commerce Gamer hecho con JavaScript, HTML y CSS. #EnProceso</h2>
 <div align="center">
     <img src="assets/img/muestrapage.png" style="width:500px; height: 250px">
 </div>
