@@ -1,7 +1,7 @@
 <h1 align="center">E-Commerce Gamer</h1>
 <h2 align="center">E-Commerce Gamer hecho con JavaScript, HTML y CSS. #EnProceso</h2>
 <div align="center">
-    <img src="assets/img/muestrapage.png" style="width:500px; height: 235px">
+    <img src="assets/img/muestrapage.png" style="width:500px; height: 220px">
 </div>
 <div align="center">
     <h3>Enlace a la página web: <a href="https://pblnahu1.github.io/ecommerce-js.github.io/">https://pblnahu1.github.io/ecommerce-js.github.io/</a></h3>
