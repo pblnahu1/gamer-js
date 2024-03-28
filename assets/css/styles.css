@@ -234,6 +234,22 @@ header {
   margin: 15px 0px;
 }
 
+#contenedor-carrito {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 30vh;
+}
+
+#contenedor-carrito::-webkit-scrollbar{
+  width: 10px;
+  background: #000000;
+}
+
+#contenedor-carrito::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
 .productos-carrito {
   display: flex;
   align-items: center;

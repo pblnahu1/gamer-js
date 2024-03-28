@@ -1,24 +1,24 @@
 import products_json_favoritos from "./fav.mjs";
 import products_json_carrito from "./carrito.mjs";
 
-const btnCerrarNav = document.getElementById("btn-cerrar-nav");
+const d = document;
 
-const btnCarrito = document.getElementById("btn-carrito");
-const miContenedorCarrito = document.getElementById("mi-carrito");
-export const miContenedorProductosAgregadosCarrito = document.getElementById("contenedor-carrito");
+const btnCarrito = d.getElementById("btn-carrito");
+const miContenedorCarrito = d.getElementById("mi-carrito");
+export const miContenedorProductosAgregadosCarrito = d.getElementById("contenedor-carrito");
 
-const btnFavorito = document.getElementById("btn-favorito");
-const miContenedorFavorito = document.getElementById("mis-favoritos");
-export const miContenedorProductosAgregadosFavoritos = document.getElementById("contenedor-fav");
+const btnFavorito = d.getElementById("btn-favorito");
+const miContenedorFavorito = d.getElementById("mis-favoritos");
+export const miContenedorProductosAgregadosFavoritos = d.getElementById("contenedor-fav");
 
+const btnPerfil = d.getElementById("btn-perfil");
+const miContenedorPerfil = d.getElementById("mi-perfil");
 
-const btnPerfil = document.getElementById("btn-perfil");
-const miContenedorPerfil = document.getElementById("mi-perfil");
-
+const btnCerrarNav = d.getElementById("btn-cerrar-nav");
 
 const mostrarVentanasNav = () => {
   // `toggle` y `remove`
-  btnCarrito.addEventListener("click", () => {
+  btnCarrito.addEventListener("click", (e) => {
     if (miContenedorCarrito.style.display == "none") {
       miContenedorCarrito.style.display = "block";
       miContenedorFavorito.style.display = "none";
@@ -26,9 +26,11 @@ const mostrarVentanasNav = () => {
     } else {
       miContenedorCarrito.style.display = "none";
     }
+    e.preventDefault();
   });
+ 
 
-  btnFavorito.addEventListener("click", () => {
+  btnFavorito.addEventListener("click", (e) => {
     if (miContenedorFavorito.style.display == "none") {
       miContenedorFavorito.style.display = "block";
       miContenedorCarrito.style.display = "none";
@@ -37,9 +39,11 @@ const mostrarVentanasNav = () => {
     } else {
       miContenedorFavorito.style.display = "none";
     }
+    e.preventDefault();
   });
+  
 
-  btnPerfil.addEventListener("click", () => {
+  btnPerfil.addEventListener("click", (e) => {
     if (miContenedorPerfil.style.display == "none") {
       miContenedorPerfil.style.display = "block";
       miContenedorFavorito.style.display = "none";
@@ -47,7 +51,9 @@ const mostrarVentanasNav = () => {
     } else {
       miContenedorPerfil.style.display = "none";
     }
+    e.preventDefault();
   });
+ 
 }
 
 
@@ -58,7 +64,7 @@ const mostrarVentanasNav = () => {
 // Esta funcion se relaciona gracias al localhost, lógica implementada en `js/server.js`
 const seleccion_paises_nav = () => {
 
-  const selector = document.getElementById("list-country");
+  const selector = d.getElementById("list-country");
   const apiUrl = 'http://localhost:3000/names.json'; // http://country.io/names.json
 
   // Hacer una solicitud a la API: {mode:'cors'} especifica el modo de la solicitud
@@ -66,6 +72,7 @@ const seleccion_paises_nav = () => {
     // .then(response => (response.ok ? response.json() : Promise.reject(`HTTP error! Status: ${response.status}`)))
     // Verifico si la respuesta es exitosa, sino lanza un error
     .then(response => {
+      console.log(response);
       if (!response) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
@@ -81,7 +88,7 @@ const seleccion_paises_nav = () => {
         countryCodes.forEach(countryCode => { // for (const countryCode in data)
           if (data.hasOwnProperty(countryCode)) { // si `data` tiene la propiedad especificada según `countryCode`
             const countryName = data[countryCode]; // accedo a la propiedad existente del objeto.
-            let newElementOption = document.createElement("option");
+            let newElementOption = d.createElement("option");
             newElementOption.value = countryCode;
             newElementOption.textContent = countryName;
             selector.appendChild(newElementOption);

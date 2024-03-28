@@ -1,9 +1,11 @@
 // Para usar los import y export, a los archivos deben terminar con `.mjs`
 import { miContenedorProductosAgregadosFavoritos } from "./main.mjs";
 
+const d = document;
+
 // En esta función hago uso de API Fetch para obtener datos de mi JSON
 export const products_json_favoritos = () => {
-  document.addEventListener('DOMContentLoaded', () => {
+  d.addEventListener('DOMContentLoaded', () => {
     fetch('assets/js/productos.json')
       .then(response => (response.ok ? response.json() : Promise.reject(`HTTP error! Status: ${response.status}`)))
       .then(data => {
