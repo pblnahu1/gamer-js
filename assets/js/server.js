@@ -1,4 +1,4 @@
-// Buscar Documentación de todo esto, junto con las propiedades
+
 // Paquete Express, Cors y Middleware
 // npm install express cors
 // npm install http-proxy-middleware
