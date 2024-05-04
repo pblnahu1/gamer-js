@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="assets/css/styles.css">
   
   <!-- Fontawesome -->
-  <link href="https://cdn.jsdelivr.net/gh/eliyantosarage/font-awesome-pro@main/fontawesome-pro-6.5.1-web/css/all.min.css" rel="stylesheet">
+  <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet" />
 
   <!-- FontsGoogle -->
   <link async href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap' rel='stylesheet'>
@@ -39,7 +39,7 @@
         <div class="contenedor-botones-header">
           <!-- Carrito -->
           <button id="btn-carrito" class="btn btn-carrito" title="Tu Carrito">
-            <i class="fa-solid fa-cart-shopping">
+            <i class="fa-brands fa-cart-shopping">
               <div id="numero-prod-carrito">0</div>
             </i>
           </button>
@@ -70,35 +70,6 @@
               <span class="msg-favoritos">No tenés ningún producto que te guste. ¡Agregalos acá!</span>
             </div>
           </div>
-          
-          <!-- Perfil -->
-          <button id="btn-perfil" class="btn btn-perfil"><i class="fa-solid fa-user"></i></button>
-          <div class="container-btns" id="mi-perfil">
-            <div class="informacion-contenido informacion-perfil">
-              <p class="title-contenedor-nav title-account">Ingresá a tu cuenta</p>
-              <button class="btn-cerrar-nav btn-cerrar-perfil" id="btn-cerrar-nav" title="Cerrar">X</button>
-            </div>
-            <div class="contenido-principal contenedor-perfil">
-              <form>
-                <label for="lbl-email">Email:</label>
-                <input type="email" name="email-user" placeholder="example@gmail.com" class="input-email-user" id="lbl-email" required>
-                <label for="lbl-password">Password (8 characters)</label>
-                <input type="password" name="password-user" placeholder="1234" class="input-password-user" id="lbl-password" maxlength="8" required>
-              </form>
-            </div>
-            <div class="enlaces-perfil">
-              <p>¿No tenés una cuenta? <a href="#">Creá una</a></p> 
-              <p>¿Olvidaste tu contraseña? <a href="#">Recuperala</a></p>
-            </div>
-          </div>
-          
-          <!-- Pais -->
-          <button id="btn-pais" class="btn btn-pais">
-            <i class="fa-solid fa-globe"></i>
-            <select id="list-country">
-              <option value="Seleccionar país">Seleccionar país</option>
-            </select>
-          </button>
         </div>
       </nav>
     </div>
@@ -196,13 +167,12 @@
   </main>
   <footer>
     <div id="footer-container" class="footer-container">
-      <a href="#" target="" class="link-logo"><img src="assets/img/logo.png" alt="logo"></a>
+      <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
     </div>
   </footer>
 
   <script src="assets/js/app.js" type="module" defer></script>
   <script src="assets/js/main.mjs" type="module" defer></script>
-  <script src="assets/js/server.js" type="module" defer></script>
 </body>
 
 </html>
