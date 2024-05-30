@@ -17,28 +17,11 @@ export const products_json_carrito = () => {
         let txt_total_productos = d.getElementById("total");
 
         let total = 0; // variable inicializada en cero para calcular el total.
-        
         let productos_agregados_count = 0; // incrementa en el ícono los productos agregados.
-        
         let cantidadesDisponibles; // variable que verifica, según la clave "Cantidad" del JSON, cuantos productos quedan para agregar al carrito y lo muestro en consola también.
 
-
-        if (botones_carrito.length > 0 && cantidadInfo.length > 0) {
-          botones_carrito.forEach((boton, index) => {
-            boton.addEventListener('click', () => {
-              agregarAlCarrito(boton, index);
-            });
-          });
-        } else {
-          console.warn("La NodeList de botones para agregar al carrito está vacía.");
-        }
-
-
-        agregarAlCarrito = (boton, index) => {
+        const agregarAlCarrito = (boton, index) => {
           const producto = data[index];
-          console.log(producto)
-          msg_carrito.style.display = "none";
-          
           if (producto) {
             cantidadesDisponibles = producto.cantidad;
             if (cantidadesDisponibles !== 0) {
@@ -92,33 +75,28 @@ export const products_json_carrito = () => {
 
               console.log(producto);
 
-              // const toNumber = (precio) => { return parseInt(precio) };
               let precio_producto = parseInt(`${producto.precio}`);
               total += precio_producto;
-              console.log(total);
               productos_agregados_count++;
               numero_productos_agregados();
               actualizarTotal();
 
-              
             } else {
               console.warn(`Ya no quedan productos disponibles de ${producto.producto}`);
             }
           } else {
             console.warn(`No se encontró el producto correspondiente al índice [${index}]`);
           }
-        }
+        };
 
         const numero_productos_agregados = () => {
           let $numeroIncrementador = d.getElementById("numero-prod-carrito");
           $numeroIncrementador.textContent = productos_agregados_count;
-        }
-
+        };
 
         const actualizarTotal = () => {
           txt_total_productos.innerText = `Total: $${total}`;
-        }
-
+        };
 
         const eliminar_producto_carrito = (index) => {
           const productoEliminado = data[index];
@@ -139,7 +117,6 @@ export const products_json_carrito = () => {
                   } else {
                     console.warn("Ocurrió un error al intentar actualizar las Cantidades Disponibles");
                   }
-
                 } else {
                   console.warn("Hubo un error al acceder a los datos del JSON para las Cantidades Disponibles");
                 }
@@ -163,6 +140,16 @@ export const products_json_carrito = () => {
           } else {
             console.warn(`No ha sido posible eliminar el producto '${productoEliminado.producto}' del carrito`);
           }
+        };
+
+        if (botones_carrito.length > 0 && cantidadInfo.length > 0) {
+          botones_carrito.forEach((boton, index) => {
+            boton.addEventListener('click', () => {
+              agregarAlCarrito(boton, index);
+            });
+          });
+        } else {
+          console.warn("La NodeList de botones para agregar al carrito está vacía.");
         }
 
         boton_comprar.addEventListener("click", e => {
@@ -170,14 +157,14 @@ export const products_json_carrito = () => {
             Swal.fire({
               title: `Compra realizada`,
               text: `Pagaste un total de: $${total}`,
-              icon: 'success', // Puedes cambiar esto a 'success', 'warning', 'error', etc.
+              icon: 'success',
               confirmButtonText: 'Ok'
             });
           };
 
           showAlert();
 
-          total = 0
+          total = 0;
           txt_total_productos.innerText = `Total: $${total}`;
 
           const $numeroIncrementador = d.getElementById("numero-prod-carrito");
@@ -185,13 +172,13 @@ export const products_json_carrito = () => {
 
           const $productosEnCarrito = d.querySelectorAll(".productos-carrito");
           $productosEnCarrito.forEach(producto => {
-            producto.remove()
-          })
+            producto.remove();
+          });
 
           if ($productosEnCarrito.length === 0) msg_carrito.style.display = "block";
 
-          e.preventDefault(); // para prevenir un comportamiento indebido del evento
-        })
+          e.preventDefault();
+        });
       })
       .catch(error => console.error('No ha sido posible agregar productos al carrito', error));
   });
