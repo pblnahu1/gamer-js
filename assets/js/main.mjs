@@ -11,9 +11,6 @@ const btnFavorito = d.getElementById("btn-favorito")
 const miContenedorFavorito = d.getElementById("mis-favoritos")
 export const miContenedorProductosAgregadosFavoritos = d.getElementById("contenedor-fav")
 
-const btnPerfil = d.getElementById("btn-perfil")
-const miContenedorPerfil = d.getElementById("mi-perfil")
-
 const btnCerrarNav = d.getElementById("btn-cerrar-nav")
 
 const mostrarVentanasNav = () => {
@@ -22,7 +19,6 @@ const mostrarVentanasNav = () => {
     if (miContenedorCarrito.style.display == "none") {
       miContenedorCarrito.style.display = "block";
       miContenedorFavorito.style.display = "none";
-      miContenedorPerfil.style.display = "none";
     } else {
       miContenedorCarrito.style.display = "none";
     }
@@ -34,26 +30,11 @@ const mostrarVentanasNav = () => {
     if (miContenedorFavorito.style.display == "none") {
       miContenedorFavorito.style.display = "block";
       miContenedorCarrito.style.display = "none";
-      miContenedorPerfil.style.display = "none";
-
     } else {
       miContenedorFavorito.style.display = "none";
     }
     e.preventDefault();
-  });
-  
-
-  btnPerfil.addEventListener("click", (e) => {
-    if (miContenedorPerfil.style.display == "none") {
-      miContenedorPerfil.style.display = "block";
-      miContenedorFavorito.style.display = "none";
-      miContenedorCarrito.style.display = "none";
-    } else {
-      miContenedorPerfil.style.display = "none";
-    }
-    e.preventDefault();
-  });
- 
+  }); 
 }
 
 const render = () => {

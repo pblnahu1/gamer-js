@@ -23,6 +23,7 @@ fetch('assets/js/productos.json')
         // console.log(i);
       
         let producto = productos_categoria[i];
+        console.log(producto)
 
         let cards = document.createElement("div");
         cards.classList.add("card");
@@ -99,6 +100,7 @@ fetch('assets/js/productos.json')
   });
 
 
+// Función para manejar los botones de interacción de las categorías
 const seccion_principal_categorias = () => {
   for (let i = 1; i <= 3; i++) {
     let nuevoContenedor = document.createElement("div");

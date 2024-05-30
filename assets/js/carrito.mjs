@@ -34,8 +34,9 @@ export const products_json_carrito = () => {
         }
 
 
-        const agregarAlCarrito = (boton, index) => {
+        agregarAlCarrito = (boton, index) => {
           const producto = data[index];
+          console.log(producto)
           msg_carrito.style.display = "none";
           
           if (producto) {
