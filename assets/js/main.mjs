@@ -11,7 +11,7 @@ const btnFavorito = d.getElementById("btn-favorito")
 const miContenedorFavorito = d.getElementById("mis-favoritos")
 export const miContenedorProductosAgregadosFavoritos = d.getElementById("contenedor-fav")
 
-const btnCerrarNav = d.getElementById("btn-cerrar-nav")
+const btnCerrarNav = d.querySelectorAll(".btn-cerrar-nav")
 
 const mostrarVentanasNav = () => {
   // `toggle` y `remove`
@@ -37,10 +37,22 @@ const mostrarVentanasNav = () => {
   }); 
 }
 
+// cuando uso querySelectorAll debo recorrer con un forEach
+const ocultarVentanasNav = () => {
+  btnCerrarNav.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      miContenedorCarrito.style.display = "none";
+      miContenedorFavorito.style.display = "none";
+      e.preventDefault();
+    });
+  });
+}
+
 const render = () => {
   mostrarVentanasNav()
   products_json_carrito()
   products_json_favoritos()
+  ocultarVentanasNav()
 }
 
 render()
