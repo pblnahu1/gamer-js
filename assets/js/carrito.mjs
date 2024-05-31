@@ -27,60 +27,72 @@ export const products_json_carrito = () => {
             if (cantidadesDisponibles !== 0) {
               producto.cantidad--;
 
-              let contenido_producto_carrito = d.createElement('div');
-              contenido_producto_carrito.classList.add('productos-carrito');
-              contenido_producto_carrito.id = `id-prod-carrito-${index}`;
-              miContenedorProductosAgregadosCarrito.appendChild(contenido_producto_carrito);
+              let productosCarrito = d.getElementById(`id-prod-carrito-${index}`);
+              if (productosCarrito) {
+                // incremento la cantidad del producto existente en el carrito
+                let cantidadSpanProductos = productosCarrito.querySelector('.cantidad-producto-carrito');
+                cantidadSpanProductos.textContent = parseInt(cantidadSpanProductos.textContent) + 1;
+              } else {
 
-              let contenedor_imagen_producto = d.createElement("div");
-              contenedor_imagen_producto.classList.add('div-img-carrito', 'prod-carr');
-              contenedor_imagen_producto.id = "id-img-carrito";
-              contenido_producto_carrito.appendChild(contenedor_imagen_producto);
+                let contenido_producto_carrito = d.createElement('div');
+                contenido_producto_carrito.classList.add('productos-carrito');
+                contenido_producto_carrito.id = `id-prod-carrito-${index}`;
+                miContenedorProductosAgregadosCarrito.appendChild(contenido_producto_carrito);
 
-              let imagen_producto_carrito = d.createElement("img");
-              imagen_producto_carrito.src = producto.url;
-              imagen_producto_carrito.alt = producto.producto;
-              contenedor_imagen_producto.appendChild(imagen_producto_carrito);
+                let cantidad_productos_agregados_span = d.createElement('span');
+                cantidad_productos_agregados_span.classList.add('cantidad-producto-carrito');
+                cantidad_productos_agregados_span.textContent = '1';
+                contenido_producto_carrito.appendChild(cantidad_productos_agregados_span);
 
-              let contenedor_info_carrito = d.createElement("div");
-              contenedor_info_carrito.classList.add('div-info-carrito', 'prod-carr');
-              contenedor_info_carrito.id = "id-info-carrito";
-              contenido_producto_carrito.appendChild(contenedor_info_carrito);
+                let contenedor_imagen_producto = d.createElement("div");
+                contenedor_imagen_producto.classList.add('div-img-carrito', 'prod-carr');
+                contenedor_imagen_producto.id = "id-img-carrito";
+                contenido_producto_carrito.appendChild(contenedor_imagen_producto);
 
-              let contenedor_nombre_precio_producto = d.createElement("div");
-              contenedor_nombre_precio_producto.classList.add('div-nombre-precio-producto');
-              contenedor_nombre_precio_producto.id = "id-nombre-precio-producto";
-              contenedor_nombre_precio_producto.innerHTML = `
+                let imagen_producto_carrito = d.createElement("img");
+                imagen_producto_carrito.src = producto.url;
+                imagen_producto_carrito.alt = producto.producto;
+                contenedor_imagen_producto.appendChild(imagen_producto_carrito);
+
+                let contenedor_info_carrito = d.createElement("div");
+                contenedor_info_carrito.classList.add('div-info-carrito', 'prod-carr');
+                contenedor_info_carrito.id = "id-info-carrito";
+                contenido_producto_carrito.appendChild(contenedor_info_carrito);
+
+                let contenedor_nombre_precio_producto = d.createElement("div");
+                contenedor_nombre_precio_producto.classList.add('div-nombre-precio-producto');
+                contenedor_nombre_precio_producto.id = "id-nombre-precio-producto";
+                contenedor_nombre_precio_producto.innerHTML = `
                 <span class="span-nombre">${producto.producto}</span>
                 <span class="span-precio">$${producto.precio}</span>
               `;
-              contenedor_info_carrito.appendChild(contenedor_nombre_precio_producto);
+                contenedor_info_carrito.appendChild(contenedor_nombre_precio_producto);
 
-              let contenedor_btn_eliminar_producto_carrito = d.createElement("div");
-              contenedor_btn_eliminar_producto_carrito.classList.add('div-btn-eliminar-producto-carrito');
-              contenedor_btn_eliminar_producto_carrito.id = "id-btn-eliminar-producto-carrito";
-              contenedor_info_carrito.appendChild(contenedor_btn_eliminar_producto_carrito);
+                let contenedor_btn_eliminar_producto_carrito = d.createElement("div");
+                contenedor_btn_eliminar_producto_carrito.classList.add('div-btn-eliminar-producto-carrito');
+                contenedor_btn_eliminar_producto_carrito.id = "id-btn-eliminar-producto-carrito";
+                contenedor_info_carrito.appendChild(contenedor_btn_eliminar_producto_carrito);
 
-              let boton_remover_producto = d.createElement("button");
-              boton_remover_producto.classList.add("btn-remover-producto");
-              boton_remover_producto.onclick = () => {
-                eliminar_producto_carrito(index);
-              }
-              boton_remover_producto.innerHTML = `
+                let boton_remover_producto = d.createElement("button");
+                boton_remover_producto.classList.add("btn-remover-producto");
+                boton_remover_producto.onclick = () => {
+                  eliminar_producto_carrito(index);
+                }
+                boton_remover_producto.innerHTML = `
                 <i class="fas fa-trash" style="color:red";></i>
               `;
-              contenedor_btn_eliminar_producto_carrito.appendChild(boton_remover_producto);
+                contenedor_btn_eliminar_producto_carrito.appendChild(boton_remover_producto);
 
-              console.info(`Agregado al carrito: \nID del Botón: '${boton.id}',\nNombre Producto: '${producto.producto}',\nÍndice: [${index}],\nCantidad Disponible Original: '${cantidadesDisponibles}',\nCantidad Disponible Actual: '${cantidadesDisponibles - 1}'`);
+                console.info(`Agregado al carrito: \nID del Botón: '${boton.id}',\nNombre Producto: '${producto.producto}',\nÍndice: [${index}],\nCantidad Disponible Original: '${cantidadesDisponibles}',\nCantidad Disponible Actual: '${cantidadesDisponibles - 1}'`);
 
-              console.log(producto);
+                console.log(producto);
 
-              let precio_producto = parseInt(`${producto.precio}`);
-              total += precio_producto;
-              productos_agregados_count++;
-              numero_productos_agregados();
-              actualizarTotal();
-
+                let precio_producto = parseInt(`${producto.precio}`);
+                total += precio_producto;
+                productos_agregados_count++;
+                numero_productos_agregados();
+                actualizarTotal();
+              }
             } else {
               console.warn(`Ya no quedan productos disponibles de ${producto.producto}`);
             }
@@ -106,40 +118,19 @@ export const products_json_carrito = () => {
           productos_agregados_count--;
           numero_productos_agregados();
           actualizarTotal();
-          if (productoEliminado) {
-            if (cantidadInfo.length > 0) {
-              cantidadInfo.forEach((btn, i) => {
-                const productoCant = data[i];
-                if (productoCant) {
-                  let idCantidad = d.getElementById(btn.id);
-                  if (idCantidad) {
-                    idCantidad.innerHTML = `Cantidad: ${productoCant.cantidad}`;
-                  } else {
-                    console.warn("Ocurrió un error al intentar actualizar las Cantidades Disponibles");
-                  }
-                } else {
-                  console.warn("Hubo un error al acceder a los datos del JSON para las Cantidades Disponibles");
-                }
-              });
+
+          let productoCarrito = d.getElementById(`id-prod-carrito-${index}`);
+          if (productoCarrito) {
+            let cantidadSpan = productoCarrito.querySelector('.cantidad-producto-carrito');
+            let cantidadActual = parseInt(cantidadSpan.textContent);
+            if (cantidadActual > 1) {
+              cantidadSpan.textContent = cantidadActual - 1;
             } else {
-              console.warn("Ha ocurrido un error: No hay elementos para los botones de cantidades.");
+              productoCarrito.remove();
             }
-          } else {
-            console.warn("Hubo un error al acceder a los datos del JSON para los Productos Eliminados");
           }
 
-          console.info(`Se ha eliminado del carrito el Producto '${productoEliminado.producto}' y ahora hay '${productoEliminado.cantidad}' disponibles`);
-
-          let producto_eliminado = d.getElementById(`id-prod-carrito-${index}`);
-          if (producto_eliminado) {
-            producto_eliminado.remove();
-            const productosEnCarrito = d.querySelectorAll('.productos-carrito');
-            if (productosEnCarrito.length === 0) {
-              msg_carrito.style.display = "block";
-            }
-          } else {
-            console.warn(`No ha sido posible eliminar el producto '${productoEliminado.producto}' del carrito`);
-          }
+          console.log(`Se elimino del carrito el Producto '${productoEliminado.producto}' y ahora hay '${productoEliminado.cantidad}' disponibles.`);
         };
 
         if (botones_carrito.length > 0 && cantidadInfo.length > 0) {
