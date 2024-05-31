@@ -12,16 +12,16 @@ fetch('assets/js/productos.json')
       // console.log(txt_array);
       console.log(categoria_actual); // el indice donde estoy parado
       // console.log(index);
-      
+
       let seccion = seccion_productos[index]; // recorro cada section
       console.log(seccion);
-      
+
       let productos_categoria = data.filter(producto => producto.url.includes(categoria_actual.toLowerCase())); // busca en el json si la key "url" tiene el índice valor esperado, por ejemplo 'Consolas'
       console.log(productos_categoria);
 
       for (let i = 0; i < productos_categoria.length && i < 5; i++) {
         // console.log(i);
-      
+
         let producto = productos_categoria[i];
         console.log(producto)
 

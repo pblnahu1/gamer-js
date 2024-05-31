@@ -102,7 +102,11 @@ export const products_json_favoritos = () => {
 
         const numero_productos_favoritos = () => {
           let $numeroIncrementador = d.getElementById("numero-prod-favoritos");
-          $numeroIncrementador.textContent = productos_favoritos_count;
+          if ($numeroIncrementador) {
+            $numeroIncrementador.textContent = productos_favoritos_count;
+          } else {
+            console.warn("Elemento de número de productos favoritos no encontrado.");
+          }
         };
 
         const eliminar_producto_favorito = (index) => {

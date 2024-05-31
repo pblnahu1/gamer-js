@@ -24,7 +24,7 @@ const mostrarVentanasNav = () => {
     }
     e.preventDefault();
   });
- 
+
 
   btnFavorito.addEventListener("click", (e) => {
     if (miContenedorFavorito.style.display == "none") {
@@ -34,7 +34,7 @@ const mostrarVentanasNav = () => {
       miContenedorFavorito.style.display = "none";
     }
     e.preventDefault();
-  }); 
+  });
 }
 
 // cuando uso querySelectorAll debo recorrer con un forEach

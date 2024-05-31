@@ -8,7 +8,7 @@
 
   <link rel="icon" href="assets/img/logo.png">
   <link rel="stylesheet" href="assets/css/styles.css">
-  
+
   <!-- Fontawesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
@@ -30,12 +30,19 @@
   <header>
     <div id="header-container" class="header-container">
       <a href="#" target="" class="link-logo"><img src="assets/img/logo.png" alt="logo"></a>
+      <div class="hamburger-menu" id="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <nav id="nav-bar" class="nav-bar">
+        
+
         <ul id="list-nav-link">
           <li><a href="#" target="" class="nav-links link-inicio">Inicio</a></li>
           <li><a href="#" target="" class="nav-links link-producto">Todos los productos</a></li>
           <li><a href="#" target="" class="nav-links link-quienes-somos">Quienes Somos</a></li>
-          <li><a href="#" target="" class="nav-links link-contacto">Contacto</a></li>  
+          <li><a href="#" target="" class="nav-links link-contacto">Contacto</a></li>
         </ul>
 
         <div class="contenedor-botones-header">
@@ -59,9 +66,10 @@
               <button class="btn-finalizar-compra" id="btn-finalizar-compra">Finalizar Compra</button>
             </div>
           </div>
-          
+
           <!-- Favoritos -->
-          <button id="btn-favorito" class="btn btn-favorito" title="Tus Productos Favoritos"><i class="fa-solid fa-heart"></i> Tus Favoritos</button>
+          <button id="btn-favorito" class="btn btn-favorito" title="Tus Productos Favoritos"><i
+              class="fa-solid fa-heart"></i> Tus Favoritos</button>
           <div class="container-btns" id="mis-favoritos">
             <div class="informacion-contenido informacion-fav">
               <p class="title-contenedor-nav title-fav">Tus Favoritos</p>
@@ -76,6 +84,27 @@
       </nav>
     </div>
   </header>
+
+  <!-- Menu Hamburguesa -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const menuIcon = document.getElementById('hamburger-menu');
+      const navLinks = document.querySelector('.nav-bar');
+
+      if (!menuIcon || !navLinks) {
+        console.error('Menu icon or nav links not found');
+        return;
+      }
+
+      menuIcon.addEventListener('click', function () {
+        if (navLinks.style.display === "flex") {
+          navLinks.style.display = "none";
+        } else {
+          navLinks.style.display = "flex";
+        }
+      });
+    });
+  </script>
 
   <!--BOTON DE VOLVER ARRIBA-->
   <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
@@ -115,7 +144,7 @@
         </div>
       </div>
     </section>
-    
+
     <section class="sct-categorias-productos">
       <div class="content">
         <div class="container-pattern">
@@ -132,7 +161,7 @@
         <!-- div's necesarios para cada categoria con la descripcion de sus productos -->
       </div>
     </section>
-    
+
     <section class="sct-categorias-productos">
       <div class="content">
         <div class="container-pattern">
