@@ -111,7 +111,6 @@ const seccion_principal_categorias = () => {
     seccion_categorias_productos[i - 1].id = `seccion-productos-categorias-${i}`;
 
     nuevoContenedor.addEventListener("click", () => {
-      // obtengo la seccion con su id
       let seccion = document.getElementById(`seccion-productos-categorias-${i}`);
       seccion.scrollIntoView({ behavior: "smooth" });
     });

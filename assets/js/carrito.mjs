@@ -1,9 +1,8 @@
-// Para usar los import y export, a los archivos deben terminar con `.mjs`
+
 import { miContenedorProductosAgregadosCarrito } from "./main.mjs";
 
 const d = document;
 
-// En esta función hago uso de API Fetch para obtener datos de mi JSON
 export const products_json_carrito = () => {
   d.addEventListener('DOMContentLoaded', function () {
     fetch('assets/js/productos.json')
@@ -18,22 +17,23 @@ export const products_json_carrito = () => {
 
         let total = 0; // variable inicializada en cero para calcular el total.
         let productos_agregados_count = 0; // incrementa en el ícono los productos agregados.
-        let cantidadesDisponibles; // variable que verifica, según la clave "Cantidad" del JSON, cuantos productos quedan para agregar al carrito y lo muestro en consola también.
+        let productosAgregados = {}; // Objeto para llevar la cuenta de los productos agregados
 
         const agregarAlCarrito = (boton, index) => {
           const producto = data[index];
           if (producto) {
-            cantidadesDisponibles = producto.cantidad;
-            if (cantidadesDisponibles !== 0) {
+            if (!productosAgregados[producto.id]) {
+              productosAgregados[producto.id] = 0;
+            }
+
+            if (producto.cantidad > 0) {
               producto.cantidad--;
 
               let productosCarrito = d.getElementById(`id-prod-carrito-${index}`);
               if (productosCarrito) {
-                // incremento la cantidad del producto existente en el carrito
                 let cantidadSpanProductos = productosCarrito.querySelector('.cantidad-producto-carrito');
                 cantidadSpanProductos.textContent = parseInt(cantidadSpanProductos.textContent) + 1;
               } else {
-
                 let contenido_producto_carrito = d.createElement('div');
                 contenido_producto_carrito.classList.add('productos-carrito');
                 contenido_producto_carrito.id = `id-prod-carrito-${index}`;
@@ -63,9 +63,9 @@ export const products_json_carrito = () => {
                 contenedor_nombre_precio_producto.classList.add('div-nombre-precio-producto');
                 contenedor_nombre_precio_producto.id = "id-nombre-precio-producto";
                 contenedor_nombre_precio_producto.innerHTML = `
-                <span class="span-nombre">${producto.producto}</span>
-                <span class="span-precio">$${producto.precio}</span>
-              `;
+                  <span class="span-nombre">${producto.producto}</span>
+                  <span class="span-precio">$${producto.precio}</span>
+                `;
                 contenedor_info_carrito.appendChild(contenedor_nombre_precio_producto);
 
                 let contenedor_btn_eliminar_producto_carrito = d.createElement("div");
@@ -79,22 +79,33 @@ export const products_json_carrito = () => {
                   eliminar_producto_carrito(index);
                 }
                 boton_remover_producto.innerHTML = `
-                <i class="fas fa-trash" style="color:red";></i>
-              `;
+                  <i class="fas fa-trash" style="color:red";></i>
+                `;
                 contenedor_btn_eliminar_producto_carrito.appendChild(boton_remover_producto);
-
-                console.info(`Agregado al carrito: \nID del Botón: '${boton.id}',\nNombre Producto: '${producto.producto}',\nÍndice: [${index}],\nCantidad Disponible Original: '${cantidadesDisponibles}',\nCantidad Disponible Actual: '${cantidadesDisponibles - 1}'`);
-
-                console.log(producto);
-
-                let precio_producto = parseInt(`${producto.precio}`);
-                total += precio_producto;
-                productos_agregados_count++;
-                numero_productos_agregados();
-                actualizarTotal();
               }
+
+              let precio_producto = parseInt(`${producto.precio}`);
+              total += precio_producto;
+              actualizarTotal();
+
+              productosAgregados[producto.id]++;
+              productos_agregados_count++;
+              numero_productos_agregados();
+
+              console.info(`Agregado al carrito: \nID del Botón: '${boton.id}',\nNombre Producto: '${producto.producto}',\nÍndice: [${index}],\nCantidad Disponible Original: '${producto.cantidad + 1}',\nCantidad Disponible Actual: '${producto.cantidad}'`);
+
             } else {
               console.warn(`Ya no quedan productos disponibles de ${producto.producto}`);
+              const showAlert = () => {
+                Swal.fire({
+                  title: `Sin stock`,
+                  text: `Ya no hay mas productos de "${producto.producto}" en stock.`,
+                  icon: 'warning',
+                  confirmButtonText: 'Ok'
+                });
+              };
+
+              showAlert();
             }
           } else {
             console.warn(`No se encontró el producto correspondiente al índice [${index}]`);
@@ -130,12 +141,19 @@ export const products_json_carrito = () => {
             }
           }
 
-          console.log(`Se elimino del carrito el Producto '${productoEliminado.producto}' y ahora hay '${productoEliminado.cantidad}' disponibles.`);
+          console.log(`Se eliminó del carrito el Producto '${productoEliminado.producto}' y ahora hay '${productoEliminado.cantidad}' disponibles.`);
         };
 
-        if (botones_carrito.length > 0 && cantidadInfo.length > 0) {
+        let clickContador = 0;
+        if (botones_carrito.length > 0 &&
+          botones_carrito.length >= 1 &&
+          cantidadInfo.length > 0 &&
+          botones_carrito.length === cantidadInfo.length
+        ) {
           botones_carrito.forEach((boton, index) => {
             boton.addEventListener('click', () => {
+              clickContador++;
+              console.log(`El usuario ha hecho click ${clickContador} veces`);
               agregarAlCarrito(boton, index);
             });
           });

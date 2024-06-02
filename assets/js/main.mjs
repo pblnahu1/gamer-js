@@ -14,38 +14,50 @@ export const miContenedorProductosAgregadosFavoritos = d.getElementById("contene
 const btnCerrarNav = d.querySelectorAll(".btn-cerrar-nav")
 
 const mostrarVentanasNav = () => {
-  // `toggle` y `remove`
+  // `toggle` and `remove`
   btnCarrito.addEventListener("click", (e) => {
-    if (miContenedorCarrito.style.display == "none") {
-      miContenedorCarrito.style.display = "block";
-      miContenedorFavorito.style.display = "none";
-    } else {
-      miContenedorCarrito.style.display = "none";
+    if (miContenedorCarrito) {
+      if (miContenedorCarrito.style.display === "none") {
+        miContenedorCarrito.style.display = "block";
+        miContenedorFavorito.style.display = "none";
+      } else {
+        miContenedorCarrito.style.display = "none";
+      }
     }
     e.preventDefault();
   });
 
 
   btnFavorito.addEventListener("click", (e) => {
-    if (miContenedorFavorito.style.display == "none") {
-      miContenedorFavorito.style.display = "block";
-      miContenedorCarrito.style.display = "none";
-    } else {
-      miContenedorFavorito.style.display = "none";
+    if (miContenedorFavorito) {
+      if (miContenedorFavorito.style.display === "none") {
+        miContenedorFavorito.style.display = "block";
+        miContenedorCarrito.style.display = "none";
+      } else {
+        miContenedorFavorito.style.display = "none";
+      }
     }
     e.preventDefault();
   });
 }
 
-// cuando uso querySelectorAll debo recorrer con un forEach
+// when using querySelectorAll we need to iterate over the NodeList with a forEach
 const ocultarVentanasNav = () => {
-  btnCerrarNav.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      miContenedorCarrito.style.display = "none";
-      miContenedorFavorito.style.display = "none";
-      e.preventDefault();
+  if (btnCerrarNav) {
+    btnCerrarNav.forEach((btn) => {
+      if (btn) {
+        btn.addEventListener("click", (e) => {
+          if (miContenedorCarrito) {
+            miContenedorCarrito.style.display = "none";
+          }
+          if (miContenedorFavorito) {
+            miContenedorFavorito.style.display = "none";
+          }
+          e.preventDefault();
+        });
+      }
     });
-  });
+  }
 }
 
 const render = () => {
