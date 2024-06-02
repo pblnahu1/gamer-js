@@ -88,20 +88,24 @@
   <!-- Menu Hamburguesa -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const menuIcon = document.getElementById('hamburger-menu');
-      const navLinks = document.querySelector('.nav-bar');
+      // Selección de elementos
+      const hamburgerMenu = document.getElementById('hamburger-menu');
+      const navBar = document.getElementById('nav-bar');
 
-      if (!menuIcon || !navLinks) {
-        console.error('Menu icon or nav links not found');
-        return;
-      }
+      // Crear y añadir el botón de cerrar
+      const closeButton = document.createElement('button');
+      closeButton.classList.add('btn-close');
+      closeButton.innerHTML = 'X';
+      navBar.appendChild(closeButton);
 
-      menuIcon.addEventListener('click', function () {
-        if (navLinks.style.display === "flex") {
-          navLinks.style.display = "none";
-        } else {
-          navLinks.style.display = "flex";
-        }
+      // Funcionalidad para abrir el menú
+      hamburgerMenu.addEventListener('click', () => {
+        navBar.classList.toggle('active');
+      });
+
+      // Funcionalidad para cerrar el menú
+      closeButton.addEventListener('click', () => {
+        navBar.classList.remove('active');
       });
     });
   </script>

@@ -142,6 +142,22 @@ button {
   display: flex;
   gap: 25px;
 } */
+
+.btn-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+  border: 1px solid brown;
+  padding: 5px 15px;
+  border-radius: 15px;
+}
+
 /* Fin estilos para el menú hamburguesa */
 
 header {
@@ -161,6 +177,24 @@ header {
   justify-content: space-between;
 }
 
+
+/* Estilos para el nav cuando está activo */
+.nav-bar.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0);
+  /* Fondo oscuro */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 1000;
+  padding: 25px 10px;
+}
+
 .nav-bar {
   display: flex;
 }
@@ -173,15 +207,15 @@ header {
 }
 
 .nav-bar li>.nav-links {
-  padding: 3px 12px;
-  border: 1px solid #b1b1b1;
+  padding: 10px 12px;
+  /* border: 1px solid #b1b1b1; */
   color: #c6c7e2;
   text-transform: uppercase;
   transition: all 0.3s ease-in-out;
+  border-radius: 15px;
 }
 
 .nav-bar li>.nav-links:hover {
-  box-shadow: 4px 4px 1px #4400ff;
   background: #c6c7e2;
   color: #000117;
 }
@@ -191,18 +225,11 @@ header {
   gap: 25px;
 }
 
-.nav-bar,
 .contenedor-botones-header .btn {
-  padding: 8px 12px;
-  border-radius: 10px;
+  padding: 10px 12px;
+  border-radius: 15px;
 }
 
-.nav-bar,
-.contenedor-botones-header .btn {
-  transition: all 0.3s ease-in-out;
-}
-
-.nav-bar,
 .contenedor-botones-header .btn>i {
   font-size: 19px;
 }
@@ -216,7 +243,7 @@ header {
 }
 
 .btn-carrito:hover {
-  box-shadow: 0px 0px 30px var(--btn-carrito);
+  /* box-shadow: 0px 0px 30px var(--btn-carrito); */
 }
 
 #numero-prod-carrito {
@@ -232,7 +259,7 @@ header {
 }
 
 .btn-favorito:hover {
-  box-shadow: 0px 0px 30px var(--btn-favorito);
+  /* box-shadow: 0px 0px 30px var(--btn-favorito); */
 }
 
 .btn-perfil {
@@ -284,14 +311,6 @@ header {
   width: 25%;
 }
 
-#mi-perfil {
-  border: 1px solid #2a00c4;
-  position: absolute;
-  top: 86px;
-  right: 20.7%;
-  width: 25%;
-}
-
 /* Tooltip */
 .container-btns::before {
   content: '';
@@ -310,12 +329,6 @@ header {
   border-color: transparent transparent #ff4f4f transparent;
   top: -16px;
   right: 44.5%;
-}
-
-#mi-perfil::before {
-  border-color: transparent transparent #2a00c4 transparent;
-  top: -16px;
-  right: 16.9%;
 }
 
 .informacion-contenido {
@@ -799,14 +812,77 @@ header {
 
   .nav-bar {
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    /* opacity: 0; */
+    /* visibility: hidden; */
+    transform: translateY(100%);
+    transition: transform .5s ease-in-out;
+  }
+  
+  .nav-bar.active {
+    display: flex;
+    /* opacity: 1; */
+    /* visibility: visible; */
+    transform: translateY(0%);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 20% 0;
+  }
+
+  .nav-bar.active::-webkit-scrollbar{
+    width: 10px;
+    background: #000;
+  }
+
+  .nav-bar.active::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 10px;
+  }
+
+  .nav-bar ul {
+    padding: 0;
+  }
+
+  .nav-bar ul > li {
+    width: 100%;
   }
 
   .nav-bar ul,
   .contenedor-botones-header {
     flex-direction: column;
+    align-items: center;
+    width: 80%;
+    gap: 13px;
+  }
+
+  .nav-bar li>.nav-links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 14px;
+  }
+
+  .contenedor-botones-header .btn {
+    width: 100%;
   }
 
   .hamburger-menu {
     display: flex;
+  }
+
+  .btn-close { 
+    display: flex;
+  }
+
+  .container-btns {
+    background: transparent;
+    backdrop-filter: blur(10px);
+  }
+
+  #mi-carrito, #mis-favoritos {
+    position: inherit;
+    width: 120%;
   }
 }
