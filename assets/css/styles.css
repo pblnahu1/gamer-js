@@ -486,16 +486,12 @@ header {
   height: 70vh;
 }
 
-.container-cat {
-  /* display: flex; */
-}
-
-.txt-title {
+/* .txt-title {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0;
-}
+} */
 
 .main-categorias {
   display: flex;
@@ -780,7 +776,7 @@ header {
 }
 
 .botones-productos>span {
-  text-transform: capitalize;
+  text-transform: uppercase;
   margin-left: 5px;
 }
 
@@ -884,5 +880,78 @@ header {
   #mi-carrito, #mis-favoritos {
     position: inherit;
     width: 120%;
+  }
+
+  h1 {
+    font-size: 35px;
+  }
+
+  .sct-categorias {
+    height: 110vh;
+    display: flex;
+    justify-content: center;
+  }
+
+  .container-cat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* .txt-title {
+
+  } */
+
+  .main-categorias {
+    flex-direction: column;
+    gap: 35px;
+
+  }
+
+  .items {
+    width: 100%;
+    padding: 17% 7%;
+  }
+
+  .items:hover > span {
+    transform: none;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .container-pattern {
+    flex-direction: column;
+    padding: 15.2% 5%;
+  }
+
+  .title-content{ 
+    height: 16vh;
+  }
+
+  .contenedor-categorias {
+    gap: 80px;
+  }
+
+  .card {
+    width: auto;
+  }
+
+  .card2{ 
+    width: 325px;
+  }
+
+  .content-image {
+    min-height: 300px;
+  }
+
+  .content-image img {
+    max-width: 200px;
+  }
+
+  .botones-productos {
+    height: 50px;
   }
 }
