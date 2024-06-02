@@ -396,10 +396,11 @@ header {
 .div-info-carrito .span-precio,
 .div-info-favoritos .span-precio {
   border: 1px solid #398c60;
-  border-radius: 8px;
-  width: 45%;
+  border-radius: 15px;
+  width: 6rem;
   text-align: center;
   margin: 5px 0px;
+  padding: 8px 15px;
 }
 
 .div-info-carrito .div-btn-eliminar-producto-carrito,
@@ -864,6 +865,11 @@ header {
     width: 120%;
   }
 
+  #mi-carrito::before, 
+  #mis-favoritos::before {
+    right: 45%;
+  }
+
   #contenedor-carrito,
   #contenedor-fav {
     height: 45vh;
@@ -965,10 +971,34 @@ header {
     height: 50px;
   }
 
+  .prod-carr, .prod-fav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .div-info-carrito .div-nombre-precio-producto,
   .div-info-favoritos .div-nombre-precio-producto {
     margin: 0 0 0 15px;
   }
+
+  .div-info-carrito .div-btn-eliminar-producto-carrito,
+  .div-info-favoritos .div-btn-eliminar-producto-favoritos {
+    padding: 0;
+    margin: 0 0 0 15px;
+  }
+
+  .div-btn-eliminar-producto-carrito>.btn-remover-producto,
+  .div-btn-eliminar-producto-favoritos>.btn-remover-producto {
+    padding: 8px 15px;
+    width: 10rem;
+    margin: 9px 0px;
+  }
+
+  .div-info-carrito .span-precio,
+  .div-info-favoritos .span-precio  {
+    width: 10rem;
+  }
+
 
   .productos-carrito,
   .productos-favoritos {
