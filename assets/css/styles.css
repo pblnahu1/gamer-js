@@ -474,25 +474,39 @@ header {
 
 .sct-categorias {
   background-color: #000;
-  height: 50vh;
-  display: flex;
+  /* height: 50vh; */
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between; */
+  /* width: auto; */
+  /* margin: 0 auto; */
+  padding: 70px 0;
+}
+
+.container-cat {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: space-around; */
+  /* align-items: center; */
+  /* flex-wrap: wrap; */
+  /* width: 100%; */
+  /* margin: 0 auto; */
+  /* gap: 25px; */
 }
 
 .main-categorias {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
-  flex-direction: row;
-  /* flex-wrap: wrap; */
+  /* flex-direction: row; */
+  flex-wrap: wrap;
 }
 
 .items {
   cursor: pointer;
-  padding: 9% 11%;
+  padding: 6% 8%;
   margin: 0 15px;
-  width: 100%;
+  /* width: 100%; */
   border: 3px solid transparent;
   border-radius: 15px;
   display: flex;
@@ -501,6 +515,9 @@ header {
   flex-direction: row;
   transition: border .3s ease-in-out;
   /* transition: transform .3s ease-in-out; */
+  /* text-align: center; */
+  min-width: 150px;
+  flex: 1;
 }
 
 .items:hover {
@@ -781,6 +798,35 @@ header {
   cursor: default;
 }
 
+footer {
+  background-color: #080707;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.wrapper {
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  gap: 85px;
+  color: #fff;
+}
+
+.wrapper p a {
+  color: #fff;
+}
+
+.redes a>i {
+  color: #fff;
+  font-size: 23px;
+  margin: 0 12px;
+}
+
+.redes a>i:hover {}
+
 /* Media queries */
 @media (max-width: 990px) {
   header {
@@ -865,7 +911,7 @@ header {
     width: 120%;
   }
 
-  #mi-carrito::before, 
+  #mi-carrito::before,
   #mis-favoritos::before {
     right: 45%;
   }
@@ -889,7 +935,6 @@ header {
 
   .container-cat {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 95%;
@@ -897,13 +942,20 @@ header {
 
   .main-categorias {
     flex-direction: column;
+    align-items: center;
     gap: 35px;
     flex-wrap: nowrap;
   }
 
   .items {
-    width: 100%;
-    padding: 17% 7%;
+    width: 123%;
+    max-width: 300px;
+    /*ancho máximo de los elementos*/
+    padding: 25% 7%;
+  }
+
+  .items>span {
+    font-size: 2.5em;
   }
 
   .items:hover>span {
@@ -971,7 +1023,8 @@ header {
     height: 50px;
   }
 
-  .prod-carr, .prod-fav {
+  .prod-carr,
+  .prod-fav {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -995,7 +1048,7 @@ header {
   }
 
   .div-info-carrito .span-precio,
-  .div-info-favoritos .span-precio  {
+  .div-info-favoritos .span-precio {
     width: 10rem;
   }
 
@@ -1004,5 +1057,10 @@ header {
   .productos-favoritos {
     width: 90%;
     margin: 0 auto;
+  }
+
+  .wrapper {
+    justify-content:center;
+    gap: 0;
   }
 }
