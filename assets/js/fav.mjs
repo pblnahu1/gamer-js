@@ -23,7 +23,7 @@ const inicializarEventos = (data) => {
   if ($botones_favoritos.length > 0) {
     $botones_favoritos.forEach((boton, index) => {
       boton.addEventListener('click', () => {
-        console.log(`Botón de agregar a favoritos clickeado: ${boton.id}`);
+        //console.log(`Botón de agregar a favoritos clickeado: ${boton.id}`);
         agregarAFavoritos(data, boton, index);
       });
     });
@@ -47,7 +47,7 @@ const agregarAFavoritos = (data,boton, index) => {
     } else {
       crearElementoProductoFavorito(producto, index);
 
-      console.info(`Agregado a favoritos: \nID del Botón: '${boton.id}',\nNombre Producto: '${producto.producto}',\nÍndice: [${index}]`);
+      //console.info(`Agregado a favoritos: \nID del Botón: '${boton.id}',\nNombre Producto: '${producto.producto}',\nÍndice: [${index}]`);
 
       productos_favoritos_count++;
       numero_productos_favoritos();
@@ -128,7 +128,7 @@ const eliminar_producto_favorito = (index) => {
     productos_favoritos_count--;
     numero_productos_favoritos();
 
-    console.info(`Se ha eliminado de favoritos el Producto con índice [${index}]`);
+    //console.info(`Se ha eliminado de favoritos el Producto con índice [${index}]`);
   } else {
     console.warn(`No ha sido posible eliminar el producto con índice [${index}] de favoritos`);
   }

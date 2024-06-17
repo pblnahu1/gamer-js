@@ -33,7 +33,7 @@ const inicializarEventos = (data) => {
     $botones_carrito.forEach((boton, index) => {
       boton.addEventListener('click', () => {
         clickContador++;
-        console.log(`El usuario ha hecho click ${clickContador} veces`);
+        //console.log(`El usuario ha hecho click ${clickContador} veces`);
         agregarAlCarrito(data, boton, index);
       });
     });
@@ -67,7 +67,7 @@ const agregarAlCarrito = (data, boton, index) => {
 
       actualizarTotalYContador(producto);
 
-      console.info(`Agregado al carrito: \nID del Botón: '${boton.id}',\nNombre Producto: '${producto.producto}',\nÍndice: [${index}],\nCantidad Disponible Original: '${producto.cantidad + 1}',\nCantidad Disponible Actual: '${producto.cantidad}'`);
+      //console.info(`Agregado al carrito: \nID del Botón: '${boton.id}',\nNombre Producto: '${producto.producto}',\nÍndice: [${index}],\nCantidad Disponible Original: '${producto.cantidad + 1}',\nCantidad Disponible Actual: '${producto.cantidad}'`);
     } else {
       console.warn(`Ya no quedan productos disponibles de ${producto.producto}`);
       const showAlert = () => {
@@ -184,7 +184,7 @@ const eliminar_producto_carrito = (producto, index) => {
     }
   }
 
-  console.log(`Se eliminó del carrito el Producto '${productoEliminado.producto}' y ahora hay '${productoEliminado.cantidad}' disponibles.`);
+  //console.log(`Se eliminó del carrito el Producto '${productoEliminado.producto}' y ahora hay '${productoEliminado.cantidad}' disponibles.`);
 };
 
 
